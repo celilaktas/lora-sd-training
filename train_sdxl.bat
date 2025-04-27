@@ -29,11 +29,10 @@ set MODEL=D:/AI-Models/checkpoints/sdxl/sd_xl_base_1.0.safetensors
 set LOGFOLDER=D:/AI/output/lora/log
 set CPU_CORES=4
 
-
 ::@echo on
 
 accelerate launch ^
---num_cpu_threads_per_process=%CPU_CORES% "%TRAITRAIN_SCRIPTN%" --enable_bucket --pretrained_model_name_or_path="%MODEL%" ^
+--num_cpu_threads_per_process=%CPU_CORES% "%TRAIN_SCRIPT%" --enable_bucket --pretrained_model_name_or_path="%MODEL%" ^
 --train_data_dir="%TRAIN_DATA%" ^
 --reg_data_dir="%REG_DATA%" ^
 --resolution="1024,1024" ^
